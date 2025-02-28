@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金句卡片生成器</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>金句卡片生成器</h1>
+        </header>
+        
+        <main class="main">
+            <div class="card-preview">
+                <div id="cardContainer" class="card">
+                    <div id="quoteText" class="quote-text"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <section class="control-section">
+                    <h2>主题风格</h2>
+                    <div class="theme-selector">
+                        <button data-theme="simple" class="theme-btn active">简约</button>
+                        <button data-theme="retro" class="theme-btn">复古</button>
+                        <button data-theme="modern" class="theme-btn">现代</button>
+                    </div>
+                </section>
+                
+                <section class="control-section">
+                    <h2>背景设置</h2>
+                    <div class="color-selector">
+                        <div class="solid-colors">
+                            <button data-color="#F5F5F5" class="color-btn" style="background: #F5F5F5"></button>
+                            <button data-color="#F0F4F8" class="color-btn" style="background: #F0F4F8"></button>
+                            <button data-color="#F8F0E5" class="color-btn" style="background: #F8F0E5"></button>
+                        </div>
+                        <div class="gradient-colors">
+                            <button data-gradient="linear-gradient(135deg, #F5F7FA 0%, #E4E9F2 100%)" class="color-btn gradient" style="background: linear-gradient(135deg, #F5F7FA 0%, #E4E9F2 100%)"></button>
+                            <button data-gradient="linear-gradient(135deg, #F8F0E5 0%, #EAD7C7 100%)" class="color-btn gradient" style="background: linear-gradient(135deg, #F8F0E5 0%, #EAD7C7 100%)"></button>
+                            <button data-gradient="linear-gradient(135deg, #E0F4FF 0%, #B3E0FF 100%)" class="color-btn gradient" style="background: linear-gradient(135deg, #E0F4FF 0%, #B3E0FF 100%)"></button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="control-section">
+                    <h2>字体设置</h2>
+                    <div class="font-selector">
+                        <button data-font="SimSun" class="font-btn">宋体</button>
+                        <button data-font="KaiTi" class="font-btn">楷体</button>
+                        <button data-font="Microsoft YaHei" class="font-btn active">微软雅黑</button>
+                        <button data-font="NSimSun" class="font-btn">新宋体</button>
+                        <button data-font="FangSong" class="font-btn">仿宋</button>
+                        <button data-font="SimHei" class="font-btn">黑体</button>
+                    </div>
+                </section>
+                
+                <section class="control-section">
+                    <h2>导出设置</h2>
+                    <div class="export-settings">
+                        <div class="format-selector">
+                            <select id="formatSelect">
+                                <option value="png">PNG</option>
+                                <option value="jpeg">JPG</option>
+                                <option value="webp">WEBP</option>
+                            </select>
+                        </div>
+                        <div class="quality-selector">
+                            <label for="qualityRange">图片质量:</label>
+                            <input type="range" id="qualityRange" min="0.5" max="1" step="0.1" value="0.8">
+                            <span id="qualityValue">80%</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="actions">
+                <button id="exportBtn" class="primary-btn">导出图片</button>
+            </div>
+        </main>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 

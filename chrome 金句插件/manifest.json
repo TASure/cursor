@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "金句卡片生成器",
+  "description": "一个优雅的工具,帮助你将网页中喜欢的文字制作成精美的卡片图片",
+  "version": "1.0.0",
+  "icons": {
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content/content.css"],
+      "js": ["content/content.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "assets/fonts/*",
+      "assets/images/*"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+} 
