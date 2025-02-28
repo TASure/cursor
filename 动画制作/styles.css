@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #4CAF50;
+}
+
+.message {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #81C784;
+    font-size: 0.9rem;
+}
+
+.audio-controls {
+    margin-bottom: 20px;
+}
+
+#audioFile {
+    margin-bottom: 15px;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#visualizer {
+    width: 100%;
+    height: 300px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+} 
