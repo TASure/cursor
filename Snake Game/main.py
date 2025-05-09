@@ -440,10 +440,13 @@ def _handle_start_state(game, events):
     """
     game.show_start_screen()
     for event in events:
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-            game.state = "PLAYING"
-            game.score = 0
-            return Snake(), Food()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                game.state = "PLAYING"
+                game.score = 0
+                return Snake(), Food()
+            elif event.key == pygame.K_h:
+                game.state = "HISTORY"
     return None, None
 
 def _handle_playing_state(game, snake, food, sound_manager, events):
@@ -460,6 +463,8 @@ def _handle_playing_state(game, snake, food, sound_manager, events):
                 snake.direction = LEFT
             elif event.key == pygame.K_RIGHT and snake.direction != LEFT:
                 snake.direction = RIGHT
+            elif event.key == pygame.K_h:
+                game.state = "HISTORY"
     
     if not snake.update():
         sound_manager.play_sound('death')
@@ -506,6 +511,7 @@ def _handle_history_state(game, events):
     for event in events:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_h:
+                # 按 H 键返回游戏结束界面
                 game.state = "GAME_OVER"
 
 if __name__ == '__main__':
