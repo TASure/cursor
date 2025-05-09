@@ -261,7 +261,11 @@ class Game:
         try:
             with open('scores_history.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
-        except:
+        except FileNotFoundError:
+            print("历史分数文件未找到，将创建新文件。")
+            return []
+        except Exception as e:
+            print(f"加载历史分数记录时出错: {e}")
             return []
 
     def save_score_to_history(self):
